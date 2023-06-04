@@ -66,7 +66,7 @@ import {
     GestureRecognizer,
     FilesetResolver,
     DrawingUtils
-} from "/node_modules/@mediapipe/tasks-vision/vision_bundle.js";
+} from "/node_modules/@mediapipe/tasks-vision";
 
 let gestureRecognizer = null;
 let runningMode = "IMAGE";
