@@ -108,10 +108,15 @@ async function predictVideo() {
         results = gestureRecognizer.recognizeForVideo(video, nowInMs);
     }
 
-    const categoryName = results.gestures[0][0].categoryName;
-    const categoryScore = parseFloat(results.gestures[0][0].score * 100).toFixed(2);
-
-    resultsText.innerHTML = `i see ${categoryName} with ${categoryScore}% confidence`;
+    if (results.gestures) {
+        const categoryName = results.gestures[0][0].categoryName;
+        const categoryScore = parseFloat(results.gestures[0][0].score * 100).toFixed(2);
+        resultsText.innerHTML = `i see ${categoryName} with ${categoryScore}% confidence`;
+    }
+    else {
+        resultsText.innerHTML = `i don't see a hand gesture`;
+    }
+    
 
 }
 
