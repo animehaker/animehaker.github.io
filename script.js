@@ -108,7 +108,7 @@ async function predictVideo() {
         results = gestureRecognizer.recognizeForVideo(video, nowInMs);
     }
 
-    if (results.gestures) {
+    if (results.gestures.length > 0) {
         const categoryName = results.gestures[0][0].categoryName;
         const categoryScore = parseFloat(results.gestures[0][0].score * 100).toFixed(2);
         resultsText.innerHTML = `i see ${categoryName} with ${categoryScore}% confidence`;
